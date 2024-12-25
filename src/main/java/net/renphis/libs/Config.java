@@ -77,7 +77,7 @@ public class Config {
         return config;
     }
 
-    public static @Nullable JsonObject get(@NotNull final String key) {
+    public static @Nullable JsonElement get(@NotNull final String key) {
         requireJsonObject(config);
 
         String[] keys = key.split("\\.");
@@ -94,21 +94,21 @@ public class Config {
             }
         }
 
-        return currentElement.getAsJsonObject();
+        return currentElement;
     }
 
     public static @Nullable String getString(@NotNull final String key) {
-        final JsonObject object = get(key);
+        final JsonElement object = get(key);
         return object == null ? null : object.getAsString();
     }
 
     public static @Nullable Boolean getBoolean(@NotNull final String key) {
-        final JsonObject object = get(key);
+        final JsonElement object = get(key);
         return object == null ? null : object.getAsBoolean();
     }
 
     public static @Nullable Number getNumber(@NotNull final String key) {
-        final JsonObject object = get(key);
+        final JsonElement object = get(key);
         return object == null ? null : object.getAsNumber();
     }
 
