@@ -1,0 +1,13 @@
+{
+    "key": "value",
+    "boolean": true,
+    "integer": 1,
+    "float": 1.1,
+    "array": [
+        "value1",
+        "value2"
+    ],
+    "nested": {
+        "nested_key": "nested_value"
+    }
+}
