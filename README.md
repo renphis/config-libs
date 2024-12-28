@@ -19,7 +19,7 @@ Update your `build.gradle` to implement the library.
 // Add the GitHub repo
 repositories {
   maven {
-    url = "https://maven.pkg.github.com/renphis/config"
+    url = "https://maven.pkg.github.com/renphis/config-libs"
     // Your GitHub username and token are used here for authentication
     credentials {
       username = project.github_user
