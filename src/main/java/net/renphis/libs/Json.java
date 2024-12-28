@@ -63,7 +63,11 @@ class Json {
         }
     }
 
-    public static @Nullable JsonObject loadFromResource(@NotNull final String resource) {
+    public static @Nullable JsonObject loadFromResource(@NotNull String resource) {
+        if (!resource.startsWith("/")) {
+            resource = "/" + resource;
+        }
+        
         final InputStream stream = Json.class.getResourceAsStream(resource);
         if (stream == null) {
             LOGGER.warn("Resource not found: {}", resource);
