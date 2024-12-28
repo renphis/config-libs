@@ -7,15 +7,14 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface IfString {
+public @interface IfByte {
     /**
      * The key to check in the configuration
      */
     String key();
 
-
     /**
      * The value to compare against the configuration
      */
-    String value();
+    byte value();
 }

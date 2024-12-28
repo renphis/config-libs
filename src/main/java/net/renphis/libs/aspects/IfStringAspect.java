@@ -9,20 +9,17 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfStringAspect {
-
     @Pointcut("execution(@net.renphis.libs.annotations.IfString * *(..)) && @annotation(ifString)")
     public void callAt(IfString ifString) {}
 
     @Around(value = "callAt(ifString)", argNames = "joinPoint, ifString")
     public Object aroundIfString(ProceedingJoinPoint joinPoint, IfString ifString) throws Throwable {
-        if (!Config.isInitialized() || !Config.has(ifString.key())) {
-            System.out.println("Config not initialized or key not found");
+        if (!Config.has(ifString.key())) {
             return null;
         }
 
         final String value = Config.getString(ifString.key());
         if (value == null || !value.equals(ifString.value())) {
-            System.out.println("Value not found or does not match");
             return null;
         }
 
