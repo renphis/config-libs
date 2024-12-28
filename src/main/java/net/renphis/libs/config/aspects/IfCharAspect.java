@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfChar;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfChar;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfCharAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfChar * *(..)) && @annotation(ifChar)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfChar * *(..)) && @annotation(ifChar)")
     public void callAt(IfChar ifChar) {}
 
     @Around(value = "callAt(ifChar)", argNames = "joinPoint, ifChar")

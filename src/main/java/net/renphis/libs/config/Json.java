@@ -1,4 +1,4 @@
-package net.renphis.libs;
+package net.renphis.libs.config;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;

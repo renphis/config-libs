@@ -1,4 +1,4 @@
-package net.renphis.libs.annotations;
+package net.renphis.libs.config.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface IfFloat {
+public @interface IfShort {
     /**
      * The key to check in the configuration
      */
@@ -16,5 +16,5 @@ public @interface IfFloat {
     /**
      * The value to compare against the configuration
      */
-    float value();
+    short value();
 }

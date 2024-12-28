@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfShort;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfShort;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfShortAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfShort * *(..)) && @annotation(ifShort)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfShort * *(..)) && @annotation(ifShort)")
     public void callAt(IfShort ifShort) {}
 
     @Around(value = "callAt(ifShort)", argNames = "joinPoint, ifShort")

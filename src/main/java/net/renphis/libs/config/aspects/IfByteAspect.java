@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfByte;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfByte;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfByteAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfByte * *(..)) && @annotation(ifByte)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfByte * *(..)) && @annotation(ifByte)")
     public void callAt(IfByte ifByte) {}
 
     @Around(value = "callAt(ifByte)", argNames = "joinPoint, ifByte")

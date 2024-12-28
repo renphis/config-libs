@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfString;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfString;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfStringAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfString * *(..)) && @annotation(ifString)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfString * *(..)) && @annotation(ifString)")
     public void callAt(IfString ifString) {}
 
     @Around(value = "callAt(ifString)", argNames = "joinPoint, ifString")

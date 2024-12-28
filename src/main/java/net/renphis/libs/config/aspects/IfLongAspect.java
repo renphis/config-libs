@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfLong;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfLong;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfLongAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfLong * *(..)) && @annotation(ifLong)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfLong * *(..)) && @annotation(ifLong)")
     public void callAt(IfLong ifLong) {}
 
     @Around(value = "callAt(ifLong)", argNames = "joinPoint, ifLong")

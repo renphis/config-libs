@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfFloat;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfFloat;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfFloatAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfFloat * *(..)) && @annotation(ifFloat)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfFloat * *(..)) && @annotation(ifFloat)")
     public void callAt(IfFloat ifFloat) {}
 
     @Around(value = "callAt(ifFloat)", argNames = "joinPoint, ifFloat")

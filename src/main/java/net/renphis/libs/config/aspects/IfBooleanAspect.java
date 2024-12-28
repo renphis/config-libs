@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfBoolean;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfBoolean;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfBooleanAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfBoolean * *(..)) && @annotation(ifBoolean)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfBoolean * *(..)) && @annotation(ifBoolean)")
     public void callAt(IfBoolean ifBoolean) {}
 
     @Around(value = "callAt(ifBoolean)", argNames = "joinPoint, ifBoolean")

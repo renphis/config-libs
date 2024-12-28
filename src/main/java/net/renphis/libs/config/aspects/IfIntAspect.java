@@ -1,7 +1,7 @@
-package net.renphis.libs.aspects;
+package net.renphis.libs.config.aspects;
 
-import net.renphis.libs.Config;
-import net.renphis.libs.annotations.IfInt;
+import net.renphis.libs.config.Config;
+import net.renphis.libs.config.annotations.IfInt;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class IfIntAspect {
-    @Pointcut("execution(@net.renphis.libs.annotations.IfInt * *(..)) && @annotation(ifInt)")
+    @Pointcut("execution(@net.renphis.libs.config.annotations.IfInt * *(..)) && @annotation(ifInt)")
     public void callAt(IfInt ifInt) {}
 
     @Around(value = "callAt(ifInt)", argNames = "joinPoint, ifInt")

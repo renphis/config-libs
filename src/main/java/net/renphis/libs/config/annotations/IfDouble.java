@@ -1,4 +1,4 @@
-package net.renphis.libs.annotations;
+package net.renphis.libs.config.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface IfBoolean {
+public @interface IfDouble {
     /**
      * The key to check in the configuration
      */
@@ -16,5 +16,5 @@ public @interface IfBoolean {
     /**
      * The value to compare against the configuration
      */
-    boolean value();
+    double value();
 }
